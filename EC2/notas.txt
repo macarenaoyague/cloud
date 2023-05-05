@@ -1,0 +1,24 @@
+-----------------------
+# terminal 1
+
+docker volume create word-count-vol
+docker volume ls
+
+docker run -it -v word-count-vol:/data alpine sh
+cd data 
+ls
+
+------------------------
+# terminal 2
+
+docker build -t my-spark-app .
+docker run -v word-count-vol:/data my-spark-app
+
+
+------------------------
+# terminal 1
+ls
+apk update && apk add vim
+vim output_file.txt
+
+----------------------------
